@@ -1,17 +1,14 @@
 var express = require('express');
-var socket_io = require('socket.io');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var socket_client = require('./socket');
 
 var app = express();
 
-var io = socket_io();
-app.io = io;
-
-var index = require('./routes/index')(io);
+const server_url = 'https://letmeincowrktimisoara.herokuapp.com/';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,8 +19,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 
-app.use('/', index);
-
+socket_client(server_url);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
