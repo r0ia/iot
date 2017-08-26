@@ -1,4 +1,4 @@
-NRF.nfcURL("test-uri://login.com/params?site='https://letmeincowrktimisoara.herokuapp.com/'");
+NRF.nfcURL("test-uri://login.com/params?site=https://letmeincowrktimisoara.herokuapp.com/");
 NRF.on('NFCon', function() {
   LED1.write(true);
 });
