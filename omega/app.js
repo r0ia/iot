@@ -8,7 +8,8 @@ var socket_client = require('./socket');
 
 var app = express();
 
-const server_url = 'https://letmeincowrktimisoara.herokuapp.com/';
+// const server_url = 'https://letmeincowrktimisoara.herokuapp.com/';
+const server_url = 'http://localhost:3001';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
