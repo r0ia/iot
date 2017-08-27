@@ -10,8 +10,11 @@ module.exports = function(server_url) {
     oled.writeText('Connected');
   });
 
-  socket.on('unlocked', function(data) {
+  socket.on('unlock', function(data) {
     var newLine = data.firstName + '\n' + data.lastName + '\nunlocked';
     oled.writeText(newLine);
+    setTimeout(function() {
+      socket.emit('unlocked', true);
+    }, 2000);
   });
 };
